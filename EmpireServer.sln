@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpireServer", "EmpireServer.csproj", "{1F9A0A16-71D9-4CC8-B7C8-A073D55078B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetarGenerator", "Utils\PlanetarGenerator\PlanetarGenerator.csproj", "{BB8CAA1C-314F-44F6-8B98-015944F7D4D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F9A0A16-71D9-4CC8-B7C8-A073D55078B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9A0A16-71D9-4CC8-B7C8-A073D55078B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9A0A16-71D9-4CC8-B7C8-A073D55078B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9A0A16-71D9-4CC8-B7C8-A073D55078B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8CAA1C-314F-44F6-8B98-015944F7D4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8CAA1C-314F-44F6-8B98-015944F7D4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8CAA1C-314F-44F6-8B98-015944F7D4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8CAA1C-314F-44F6-8B98-015944F7D4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9D6A2B8-45A8-49C8-AD63-2D3A19F3D361}
+	EndGlobalSection
+EndGlobal

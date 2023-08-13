@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F9A0A16-71D9-4CC8-B7C8-A073D55078B2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EmpireServer</RootNamespace>
+    <AssemblyName>EmpireServer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
+    <NoWarn>IDE1006</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Empire.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CmdLineParams.cs" />
+    <Compile Include="Classes\ConcurrentQueueSignal.cs" />
+    <Compile Include="Database\Database.MySQL.cs" />
+    <Compile Include="Engine\Engine.Leaks.cs" />
+    <Compile Include="Modules\Classes\Module.Slot.cs" />
+    <Compile Include="Modules\Classes\Module.Tech.cs" />
+    <Compile Include="Modules\Classes\Module.PlayerStorage.cs" />
+    <Compile Include="Modules\Galaxy\Engine\Galaxy.Profile.cs" />
+    <Compile Include="Modules\Galaxy\Galaxy.Module.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Hangar\Actions\Hangar.Action.Arrival.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Hangar\Cmd\Hangar.Cmd.Swap.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.Gravitor.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.Pulsar.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.WormHole.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Cmd\Planet.Cmd.ShowDetails.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Cmd\Planet.Cmd.Subscribe.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Fly.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Hangar\Cmd\Hangar.Cmd.Arrival.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Fuel.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Travel.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.PortalJump.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Hypodispersion.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Path.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.StandDown.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.StandUp.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Attach.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Move.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Hangar\Classes\Hangar.Controller.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Cmd\Planet.Cmd.PortalClose.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.PortalOpen.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Sockets\Classes\Socket.Connection.cs" />
+    <Compile Include="Sockets\Socket.Custom.cs" />
+    <Compile Include="Sockets\Classes\Socket.Packet.cs" />
+    <Compile Include="Sockets\Socket.TCP.cs" />
+    <Compile Include="Database\Database.Custom.cs" />
+    <Compile Include="Engine\Engine.Log.cs" />
+    <Compile Include="Engine\Engine.Server.cs" />
+    <Compile Include="Engine\Engine.Core.cs" />
+    <Compile Include="Modules\Classes\Module.Player.cs" />
+    <Compile Include="Modules\Classes\Module.Resource.cs" />
+    <Compile Include="Modules\Authorization\Auth.Module.cs" />
+    <Compile Include="Modules\Classes\Module.Construction.cs" />
+    <Compile Include="Engine\Engine.Module.cs" />
+    <Compile Include="Modules\Planetary\Planetary.Module.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Classes\Planet.Building.cs" />
+    <Compile Include="Modules\Planetary\Engine\Planetary.Dictionary.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Hangar\Classes\Hangar.Class.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Classes\Planet.Landing.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Classes\Planet.Class.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Classes\Planet.Portal.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Classes\Planet.Storage.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Classes\Planet.Controller.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Battle.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.Capture.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.Portal.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.Control.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.Subscribe.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Action.~Peredelat.ShipList.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Classes\Ship.Controller.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Attach.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Activity.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Construction.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Destroy.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Path.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Hypodispersion.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Merge.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Portaling.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Relocation.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Repair.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Separate.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Annihilation.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Constructor.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.TargetLocal.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.TargetRange.cs" />
+    <Compile Include="Modules\Classes\Module.Timers.cs" />
+    <Compile Include="Modules\Planetary\Engine\Planetary.Engine.cs" />
+    <Compile Include="Modules\Planetary\Engine\Planetary.Profile.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Classes\Ship.Class.cs" />
+    <Compile Include="Modules\Planetary\Protocol\Protocol.Custom.cs" />
+    <Compile Include="Modules\Planetary\Protocol\Protocol.Reader.cs" />
+    <Compile Include="Modules\Planetary\Protocol\Protocol.Writer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Compile Include="Modules\Planetary\Controllers\Planet\Actions\Planet.Action.Utils.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Hangar\Cmd\Hangar.Cmd.Departure.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Actions\Ship.Action.Utils.cs" />
+    <Compile Include="Modules\Planetary\Controllers\Ship\Cmd\Ship.Cmd.Construction.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
